@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 app.get('/joke', (req, res) => {
     let jokeNumber = Math.floor(Math.random() * jokes.length);
     console.log(`joke request received. Sending a random joke #${jokeNumber}...`)
-    res.send("<H1>jaas - jokes as a service</H1><br>" + "<H3>" + jokes[jokeNumber].title + "</H3>" + "<br>" + jokes[jokeNumber].joke + "<br><br><a href='/joke'>Get another joke</a>");
+    res.send("<H1>jaas - jokes as a service</H1><br>" + "<H3>" + jokes[jokeNumber].title + "</H3>" + "<br>" + jokes[jokeNumber].joke + "<br><br><a href='/jaas'>Get another joke</a>");
     //res.json(jokes[jokeNumber]);
 })
 
@@ -38,7 +38,7 @@ app.get('/jaas', (req, res) => {
         `<H1>jaas - jokes as a service</H1>
         <H4>ticket #${jokeNumber}</H4>` + 
         "<H3>" + jokes[jokeNumber].title + "</H3>" + "<br>" + 
-        jokes[jokeNumber].joke + "<br><br><a href='/joke'>Get another joke</a>");
+        jokes[jokeNumber].joke + "<br><br><a href='/jaas'>Get another joke</a>");
     //res.json(jokes[jokeNumber]);
 })
 
